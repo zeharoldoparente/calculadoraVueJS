@@ -8,7 +8,7 @@
             v-model.number="numero1"
             placeholder="Digite o primeiro número"
          />
-         <select v-model="operacao">
+         <select v-model="operacao" @change="calcular">
             <option value="soma">+</option>
             <option value="subtracao">-</option>
             <option value="multiplicacao">*</option>
@@ -19,7 +19,6 @@
             v-model.number="numero2"
             placeholder="Digite o segundo número"
          />
-         <button @click="calcular">Calcular</button>
       </div>
       <div v-if="resultado !== null" class="resultado">
          <p>O resultado da operação é: {{ resultado }}</p>
